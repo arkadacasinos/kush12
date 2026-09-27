@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className="bg-background">
       <head>
+        <meta name="yandex-verification" content="8258886162a9a668" />
         <meta charSet="utf-8" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#08111f" />
