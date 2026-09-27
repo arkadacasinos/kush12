@@ -1,0 +1,137 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: 'Arial', 'Helvetica Neue', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, monospace;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #08111f;
+  --foreground: #f3f1e9;
+  --border: #263448;
+  --ring: #d3a54a;
+  --navy: #08111f;
+  --panel: #0d1a2c;
+  --panel-light: #13243a;
+  --gold: #d3a54a;
+  --gold-soft: #ecd59b;
+  --muted: #9aa8b8;
+  --white: #f3f1e9;
+  --radius: 0.5rem;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--background); }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+.kush-shell { min-height: 100vh; overflow: hidden; }
+.kush-header, .kush-hero, .kush-intro, .kush-guide, .kush-faq, .kush-footer { max-width: 1240px; margin: 0 auto; padding-left: clamp(1.25rem, 4vw, 4rem); padding-right: clamp(1.25rem, 4vw, 4rem); }
+.kush-header { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-bottom: 1px solid var(--border); }
+.kush-brand { display: inline-flex; align-items: center; gap: .7rem; font-size: .84rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.kush-brand-mark { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--gold); color: var(--gold); font-family: Georgia, serif; font-size: 1.1rem; font-weight: 400; }
+.kush-nav { display: flex; gap: 2rem; color: var(--muted); font-size: .8rem; }
+.kush-nav a:hover, .kush-text-link:hover { color: var(--gold-soft); }
+.kush-header-link { color: var(--gold-soft); font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.kush-header-link span { margin-left: .45rem; font-size: 1rem; }
+
+.kush-hero { min-height: 590px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .9fr); align-items: center; gap: clamp(2.5rem, 7vw, 7rem); padding-top: 4.5rem; padding-bottom: 4.5rem; }
+.kush-hero-copy { max-width: 640px; }
+.kush-kicker, .kush-label { margin: 0 0 1.25rem; color: var(--gold); font-family: var(--font-mono); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; }
+.kush-kicker span { margin-right: .55rem; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -.035em; }
+h1 { max-width: 700px; margin-bottom: 1.5rem; color: var(--white); font-size: clamp(3rem, 6.7vw, 6.4rem); line-height: .96; text-wrap: balance; }
+.kush-hero-text { max-width: 520px; margin-bottom: 2.25rem; color: var(--muted); font-size: 1rem; line-height: 1.7; }
+.kush-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.4rem; }
+.kush-primary-link { display: inline-flex; align-items: center; gap: 1.25rem; padding: .9rem 1.15rem; background: var(--gold); color: #162033; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; transition: background .2s, transform .2s; }
+.kush-primary-link:hover { background: var(--gold-soft); transform: translateY(-2px); }
+.kush-primary-link span { font-size: 1.1rem; }
+.kush-text-link { color: var(--muted); font-size: .82rem; }
+.kush-text-link span { margin-left: .4rem; color: var(--gold); }
+.kush-trust-list { display: flex; gap: 1.5rem; flex-wrap: wrap; list-style: none; padding: 0; margin: 3.5rem 0 0; color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }
+.kush-trust-list li { display: flex; align-items: center; gap: .45rem; }
+.kush-trust-list span { color: var(--gold); font-family: var(--font-mono); }
+.kush-hero-visual { margin: 0; position: relative; }
+.kush-hero-visual img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; filter: saturate(.8); }
+.kush-hero-visual::after { content: ''; position: absolute; inset: 1rem -1rem -1rem 1rem; border: 1px solid var(--gold); opacity: .4; pointer-events: none; z-index: -1; }
+.kush-hero-visual figcaption { display: flex; justify-content: space-between; padding-top: .7rem; color: var(--muted); font-family: var(--font-mono); font-size: .68rem; letter-spacing: .05em; text-transform: uppercase; }
+.kush-hero-visual figcaption span:last-child { color: var(--gold); }
+
+.kush-intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 8vw, 9rem); padding-top: 7rem; padding-bottom: 7rem; border-top: 1px solid var(--border); }
+.kush-section-heading h2, .kush-guide-copy h2, .kush-faq h2 { max-width: 620px; margin-bottom: 1.3rem; color: var(--white); font-size: clamp(2.2rem, 4vw, 4.35rem); line-height: 1.02; text-wrap: balance; }
+.kush-intro-copy { max-width: 510px; padding-top: 2.2rem; color: var(--muted); }
+.kush-intro-copy p { margin-bottom: 1.3rem; }
+
+.kush-guide { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2.5rem, 8vw, 8rem); align-items: center; padding-top: 5rem; padding-bottom: 7rem; }
+.kush-guide-art img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(.75); }
+.kush-guide-copy { max-width: 610px; }
+.kush-guide-copy > p:not(.kush-label) { color: var(--muted); line-height: 1.75; }
+.kush-steps { display: grid; gap: 0; list-style: none; padding: 1rem 0 0; margin: 2rem 0 0; border-top: 1px solid var(--border); }
+.kush-steps li { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; padding: 1.15rem 0; border-bottom: 1px solid var(--border); }
+.kush-steps li > span { color: var(--gold); font-family: var(--font-mono); font-size: .72rem; }
+.kush-steps strong { display: block; margin-bottom: .25rem; color: var(--white); font-size: .9rem; }
+.kush-steps p { margin: 0; color: var(--muted); font-size: .84rem; }
+
+.kush-faq { padding-top: 6rem; padding-bottom: 6rem; border-top: 1px solid var(--border); }
+.kush-faq h2 { max-width: 800px; margin-bottom: 3rem; }
+.kush-faq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+.kush-faq-grid article { min-height: 200px; padding: 1.6rem; background: var(--panel); }
+.kush-faq-grid h3 { margin-bottom: .8rem; color: var(--gold-soft); font-family: var(--font-mono); font-size: .8rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+.kush-faq-grid p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.7; }
+
+.kush-footer { padding-top: 2.5rem; padding-bottom: 2rem; border-top: 1px solid var(--border); }
+.kush-footer-top { display: flex; justify-content: space-between; gap: 2rem; align-items: flex-start; }
+.kush-footer-top > div { display: flex; align-items: center; gap: .75rem; }
+.kush-footer-top p { margin: 0; font-family: Georgia, serif; font-size: 1.25rem; }
+.kush-footer-note { color: var(--muted); font-size: .75rem; text-align: right; }
+.kush-tags { display: flex; flex-wrap: wrap; gap: .5rem .9rem; margin: 3.5rem 0 2.5rem; }
+.kush-tags a { color: var(--muted); font-family: var(--font-mono); font-size: .68rem; }
+.kush-tags a:hover { color: var(--gold); }
+.kush-copyright { margin: 0; color: #5d6a7c; font-size: .7rem; }
+
+@media (max-width: 760px) {
+  .kush-header { height: 68px; }
+  .kush-nav { display: none; }
+  .kush-header-link { font-size: .68rem; }
+  .kush-hero { display: flex; flex-direction: column; align-items: stretch; gap: 3rem; padding-top: 3.5rem; padding-bottom: 5rem; }
+  h1 { font-size: clamp(3rem, 15vw, 5rem); }
+  .kush-hero-visual { margin: 0 .75rem 0 0; }
+  .kush-hero-visual img { aspect-ratio: 4 / 5; }
+  .kush-intro, .kush-guide { display: flex; flex-direction: column; align-items: stretch; gap: 1rem; padding-top: 5rem; padding-bottom: 5rem; }
+  .kush-intro-copy { padding-top: 1rem; }
+  .kush-guide { flex-direction: column-reverse; }
+  .kush-guide-art { margin-right: .75rem; }
+  .kush-faq { padding-top: 5rem; padding-bottom: 5rem; }
+  .kush-faq-grid { grid-template-columns: 1fr; }
+  .kush-footer-top { flex-direction: column; }
+  .kush-footer-note { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+}
+
+@keyframes none {}
